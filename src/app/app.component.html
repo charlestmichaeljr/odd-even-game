@@ -1,0 +1,15 @@
+<div>
+<app-game-control (numberGenerated)="onNumberGenerated($event)"></app-game-control>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row" *ngFor="let generatedNum of generatedNumbers">
+      <div class="col-xs-12" *ngIf="generatedNum % 2 === 0">
+        <app-even [num]="generatedNum"></app-even>
+      </div>
+      <div class="col-xs-12" *ngIf="generatedNum % 2 !== 0">
+        <app-odd [num]="generatedNum"></app-odd>
+      </div>
+    </div>
+  </div>
+</div>
